@@ -180,7 +180,7 @@ class Vpc(core.Construct):
             vpc_id=self.vpc.ref,
             assign_ipv6_address_on_creation=None,
             availability_zone=core.Fn.select(0, core.Fn.get_azs()),
-            map_public_ip_on_launch=True,
+            map_public_ip_on_launch=False,
             tags=[
                 core.CfnTag(key="Name", value=f"{core.Aws.STACK_NAME}/{id}/PublicSubnet1")
             ]
@@ -222,7 +222,7 @@ class Vpc(core.Construct):
             vpc_id=self.vpc.ref,
             assign_ipv6_address_on_creation=None,
             availability_zone=core.Fn.select(1, core.Fn.get_azs()),
-            map_public_ip_on_launch=True,
+            map_public_ip_on_launch=False,
             tags=[
                 core.CfnTag(key="Name", value=f"{core.Aws.STACK_NAME}/{id}/PublicSubnet2")
             ]
