@@ -1,5 +1,57 @@
 # Unreleased
 
+* fixing extra test output
+* fixing ses secretvalue permissions issue
+* allowing dbadmin username to be customized in DbSecret construct
+* switch from launch configs to launch templates in Asg construct
+
+# 3.7.0
+
+* fixing AssetsBucket when a bucket name is provided
+* Adding AuroraMysql construct
+
+# 3.6.2
+
+* updating asg allowed instance types
+
+# 3.6.1
+
+* Fixing KMS for OpenSearch Service
+
+# 3.6.0
+
+* Adding AssetsBucket construct
+
+# 3.5.1
+
+* Updating parameter labels
+
+# 3.5.0
+
+* OpenSearch Service construct
+
+# 3.4.1
+
+* Add option for additional policies on ses user
+
+# 3.4.0
+
+* Remove alb from dns
+* SES construct
+* Add option for additional policies on asg
+
+# 3.3.0
+
+* Remove unnecessary asg parameter from constructs
+
+# 3.2.0
+
+* Aurora Postgres construct
+* allow customization of alb health_check_path
+* ElastiCache Cluster construct
+
+# 3.1.0
+
 * ALB: Requiring CIDR range for AlbIngressCidr parameter
 * ALB, ASG, EFS: Explicit SG egress rule
 
