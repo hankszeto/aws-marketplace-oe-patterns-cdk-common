@@ -453,7 +453,10 @@ class Asg(Construct):
             instance_type=self.instance_type_param.value_as_string,
             iam_instance_profile=self.ec2_instance_profile.ref,
             security_groups=[ self.sg.ref ],
-            user_data=user_data
+            user_data=user_data,
+            metadata_options=aws_autoscaling.CfnLaunchConfiguration.MetadataOptionsProperty(
+                http_tokens="required"
+            ),
         )
         self.ec2_launch_config.override_logical_id(f"{id}LaunchConfig")
 
