@@ -187,7 +187,7 @@ class Vpc(Construct):
             vpc_id=self.vpc.ref,
             assign_ipv6_address_on_creation=None,
             availability_zone=Fn.select(0, Fn.get_azs()),
-            map_public_ip_on_launch=True,
+            map_public_ip_on_launch=False,
             tags=[
                 CfnTag(key="Name", value=f"{Aws.STACK_NAME}/{id}/PublicSubnet1")
             ]
@@ -229,7 +229,7 @@ class Vpc(Construct):
             vpc_id=self.vpc.ref,
             assign_ipv6_address_on_creation=None,
             availability_zone=Fn.select(1, Fn.get_azs()),
-            map_public_ip_on_launch=True,
+            map_public_ip_on_launch=False,
             tags=[
                 CfnTag(key="Name", value=f"{Aws.STACK_NAME}/{id}/PublicSubnet2")
             ]
