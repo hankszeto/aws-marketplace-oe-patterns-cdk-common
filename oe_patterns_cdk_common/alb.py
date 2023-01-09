@@ -95,7 +95,11 @@ class Alb(Construct):
             scheme="internet-facing",
             security_groups=[ self.sg.ref ],
             subnets=vpc.public_subnet_ids(),
-            type="application"
+            type="application",
+            load_balancer_attributes=[aws_elasticloadbalancingv2.CfnLoadBalancer.LoadBalancerAttributeProperty(
+                key="routing.http.drop_invalid_header_fields.enabled",
+                value=True
+            )]
         )
         self.alb.override_logical_id(id)
         self.http_listener = aws_elasticloadbalancingv2.CfnListener(
