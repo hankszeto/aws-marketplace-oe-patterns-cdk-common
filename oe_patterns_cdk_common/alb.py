@@ -98,7 +98,7 @@ class Alb(Construct):
             type="application",
             load_balancer_attributes=[aws_elasticloadbalancingv2.CfnLoadBalancer.LoadBalancerAttributeProperty(
                 key="routing.http.drop_invalid_header_fields.enabled",
-                value="True"
+                value="true"
             )]
         )
         self.alb.override_logical_id(id)
